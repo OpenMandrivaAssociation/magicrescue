@@ -1,19 +1,18 @@
-%define name    magicrescue
-%define version 1.1.4
-%define release 2mdk
-%define Summary Magic Rescue tries to recover files
-
-Summary:        %Summary
-Name:           %name
-Version:        %version
-Release:        %release
+Name:           magicrescue
+Version:        1.1.4
+Release:        %mkrel 3
+Summary:        Tries to recover files
 License:        GPL 
 Group:          Archiving/Other
 URL:            http://jbj.rapanden.dk/magicrescue/
 Source0:        %name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-buildroot
 Conflicts:	safecat
-Requires:	mpg123 mencoder gzip binutils
+Requires:       binutils
+Requires:       gzip
+Requires:       mencoder
+Requires:	mpg123
+BuildRequires:  db1-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Magic Rescue scans a block device for file types it knows how to recover and
@@ -26,29 +25,30 @@ it. It works on any file system.
 %setup -q
 
 %build
-%configure
-%make
+# XXX: This is not a GNU autoconf script
+export CFLAGS="%{optflags}"
+./configure --prefix=%{_prefix}
+%{make}
 
 %install
-rm -rf %buildroot
-mkdir -p ${RPM_BUILD_ROOT}%{_prefix}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_prefix}
 %makeinstall PREFIX=$RPM_BUILD_ROOT/%{_prefix}
 # move man pages to the right directory
-mv ${RPM_BUILD_ROOT}%{_prefix}/man ${RPM_BUILD_ROOT}%{_datadir}
+mv %{buildroot}%{_prefix}/man %{buildroot}%{_datadir}
 # move binaries from /usr/share
-mv ${RPM_BUILD_ROOT}%{_datadir}/magicrescue/tools/inputseek ${RPM_BUILD_ROOT}%{_bindir}
-mv ${RPM_BUILD_ROOT}%{_datadir}/magicrescue/tools/safecat ${RPM_BUILD_ROOT}%{_bindir}
-mv ${RPM_BUILD_ROOT}%{_datadir}/magicrescue/tools/textextract ${RPM_BUILD_ROOT}%{_bindir}
+mv %{buildroot}%{_datadir}/magicrescue/tools/inputseek %{buildroot}%{_bindir}
+mv %{buildroot}%{_datadir}/magicrescue/tools/safecat %{buildroot}%{_bindir}
+mv %{buildroot}%{_datadir}/magicrescue/tools/textextract %{buildroot}%{_bindir}
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
 
 %files
+%defattr(0644,root,root,0755)
+%doc COPYING README 
+%{_datadir}/magicrescue/recipes/*
+%{_mandir}/man1/*
 %defattr(0755,root,root,0755)
 %{_bindir}/*
 %{_datadir}/magicrescue/tools/*
-%defattr(0644,root,root,0755)
-%{_datadir}/magicrescue/recipes/*
-%doc COPYING README
-%{_mandir}/man1/*
-
