@@ -12,6 +12,7 @@ Requires:       gzip
 Requires:       mencoder
 Requires:	mpg123
 BuildRequires:  db1-devel
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Magic Rescue scans a block device for file types it knows how to recover and
