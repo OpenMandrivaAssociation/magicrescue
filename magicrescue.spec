@@ -1,17 +1,17 @@
 Name:           magicrescue
-Version:        1.1.4
-Release:        %mkrel 3
+Version:        1.1.5
+Release:        %mkrel 1
 Summary:        Tries to recover files
-License:        GPL 
+License:        GPLv2+
 Group:          Archiving/Other
 URL:            http://jbj.rapanden.dk/magicrescue/
-Source0:        %name-%version.tar.bz2
+Source0:        http://jbj.rapanden.dk/magicrescue/release/%name-%version.tar.gz
 Conflicts:	safecat
 Requires:       binutils
 Requires:       gzip
 Requires:       mencoder
 Requires:	mpg123
-BuildRequires:  db1-devel
+BuildRequires:  db4-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
