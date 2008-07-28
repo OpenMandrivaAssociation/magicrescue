@@ -1,6 +1,6 @@
 Name:           magicrescue
 Version:        1.1.5
-Release:        %mkrel 1
+Release:        %mkrel 3
 Summary:        Tries to recover files
 License:        GPLv2+
 Group:          Archiving/Other
