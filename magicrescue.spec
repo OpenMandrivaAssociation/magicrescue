@@ -1,6 +1,6 @@
 Name:           magicrescue
-Version:        1.1.5
-Release:        %mkrel 3
+Version:        1.1.6
+Release:        %mkrel 1
 Summary:        Tries to recover files
 License:        GPLv2+
 Group:          Archiving/Other
@@ -33,7 +33,7 @@ export CFLAGS="%{optflags}"
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_prefix}
-%makeinstall PREFIX=$RPM_BUILD_ROOT/%{_prefix}
+%makeinstall PREFIX=%{buildroot}/%{_prefix}
 # move man pages to the right directory
 mv %{buildroot}%{_prefix}/man %{buildroot}%{_datadir}
 # move binaries from /usr/share
