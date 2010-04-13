@@ -1,5 +1,5 @@
 Name:           magicrescue
-Version:        1.1.8
+Version:        1.1.9
 Release:        %mkrel 1
 Summary:        Tries to recover files
 License:        GPLv2+
