@@ -1,6 +1,6 @@
 Name:           magicrescue
 Version:        1.1.9
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        Tries to recover files
 License:        GPLv2+
 Group:          Archiving/Other
@@ -11,7 +11,7 @@ Requires:       binutils
 Requires:       gzip
 Requires:       mencoder
 Requires:	mpg123
-BuildRequires:  db4-devel
+BuildRequires:  gdbm-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
