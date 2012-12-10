@@ -52,3 +52,57 @@ rm -rf %{buildroot}
 %defattr(0755,root,root,0755)
 %{_bindir}/*
 %{_datadir}/magicrescue/tools/*
+
+
+%changelog
+* Tue Apr 12 2011 Funda Wang <fwang@mandriva.org> 1.1.9-3mdv2011.0
++ Revision: 652962
+- build with db 5.1
+
+* Mon Dec 06 2010 Oden Eriksson <oeriksson@mandriva.com> 1.1.9-2mdv2011.0
++ Revision: 612791
+- the mass rebuild of 2010.1 packages
+
+* Tue Apr 13 2010 Sandro Cazzaniga <kharec@mandriva.org> 1.1.9-1mdv2010.1
++ Revision: 534189
+- New version 1.1.9
+
+* Wed Dec 30 2009 Jérôme Brenier <incubusss@mandriva.org> 1.1.8-1mdv2010.1
++ Revision: 484226
+- new version 1.1.8
+
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 1.1.6-2mdv2010.0
++ Revision: 439698
+- rebuild
+
+* Sat Feb 28 2009 Emmanuel Andry <eandry@mandriva.org> 1.1.6-1mdv2009.1
++ Revision: 346114
+- New version 1.1.6
+
+* Mon Jul 28 2008 Thierry Vignaud <tv@mandriva.org> 1.1.5-3mdv2009.0
++ Revision: 251670
+- rebuild
+
+* Tue Feb 05 2008 Funda Wang <fwang@mandriva.org> 1.1.5-1mdv2008.1
++ Revision: 162532
+- New version 1.1.5
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Jul 31 2007 David Walluck <walluck@mandriva.org> 1.1.4-3mdv2008.0
++ Revision: 56777
+- rebuild for %%mkrel
+- fix BuildRequires
+
+
+* Thu Sep 29 2005 Oden Eriksson <oeriksson@mandriva.com> 1.1.4-2mdk
+- fix #18915
+
+* Thu Mar 24 2005 Lenny Cartier <lenny@mandrakesoft.com> 1.1.4-1mdk
+- from Dominik Grafenhofer <dominik@grafenhofer.at> : 
+	- First build
+
