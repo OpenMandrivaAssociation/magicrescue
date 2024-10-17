@@ -4,7 +4,7 @@ Release:        4
 Summary:        Tries to recover files
 License:        GPLv2+
 Group:          Archiving/Other
-URL:            http://jbj.rapanden.dk/magicrescue/
+URL:            https://jbj.rapanden.dk/magicrescue/
 Source0:        http://jbj.rapanden.dk/magicrescue/release/%name-%version.tar.gz
 Conflicts:	safecat
 Requires:       binutils
