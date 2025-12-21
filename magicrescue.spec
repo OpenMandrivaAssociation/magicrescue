@@ -11,6 +11,11 @@ Requires:       binutils
 Requires:       gzip
 Requires:       mencoder
 Requires:	mpg123
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  gdbm-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
